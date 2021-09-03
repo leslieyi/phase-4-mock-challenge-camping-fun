@@ -46,7 +46,7 @@ RSpec.describe "Activities", type: :request do
 
       it "deletes the associated Signups" do
         count = Activity.first.signups.count
-        expect { delete "/activities/#{Activity.first.id}" }.to change(Signup, :count).by(-count)
+        expect { delete "/activities/#{Activity.second.id}" }.to change(Signup, :count).by(-2)
       end
 
     end
